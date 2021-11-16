@@ -15,12 +15,13 @@
         android:text="@string/esfera"
         android:textAlignment="textStart"
         android:textSize="20dp"
-        android:textColor="#FFAB4C"
+        android:textColor="#F5E8C7"
         android:backgroundTint="@android:color/transparent"
         style="@style/Widget.MaterialComponents.Button.TextButton"/>
     <com.google.android.material.button.MaterialButton
-        android:backgroundTint="#2A465A"
+        android:backgroundTint="#6F4C5B"
         android:layout_width="0dp"
+        android:textColor="#F5E8C7"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/figura"
