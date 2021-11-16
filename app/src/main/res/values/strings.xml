@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Practica3</string>
+    <string name="cubo">Cubo</string>
+    <string name="figura">Figura</string>
+    <string name="esfera">Esfera</string>
+    <string name="paralepipedo">Paralepipedo</string>
+</resources>
