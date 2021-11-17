@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class paginaweb extends Fragment {
+    WebView webView;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +62,20 @@ public class paginaweb extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_paginaweb, container, false);
+        View v=inflater.inflate(R.layout.fragment_paginaweb, container, false);
+        WebView web = v.findViewById(R.id.pagina);
+        web.getSettings().setJavaScriptEnabled(true);
+        web.getSettings().setBuiltInZoomControls(true);
+        web.getSettings().setDisplayZoomControls(false);
+        web.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
+        });
+        web.loadUrl("https://www.google.com/");
+        return v;
     }
+
 }

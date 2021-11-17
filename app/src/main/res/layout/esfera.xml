@@ -8,44 +8,104 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:paddingStart="10dp"
-        android:paddingEnd="10dp">
+        android:paddingEnd="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton"
+            android:id="@+id/botonEsfera"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:backgroundTint="@android:color/transparent"
+            android:text="@string/esfera"
             android:textAlignment="textStart"
             android:textColor="#F5E8C7"
             android:textSize="20dp"
+            app:icon="@drawable/ic_baseline_keyboard_arrow_down_24"
             tools:layout_conversion_absoluteHeight="118dp"
             tools:layout_conversion_absoluteWidth="0dp"
             tools:layout_editor_absoluteX="10dp"
-            tools:layout_editor_absoluteY="0dp"
-            android:text="@string/esfera"
-            app:icon="@drawable/ic_baseline_keyboard_arrow_down_24"/>
+            tools:layout_editor_absoluteY="0dp" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/figuraEsfera"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:backgroundTint="#6F4C5B"
+            android:text="@string/figura"
             android:textColor="#F5E8C7"
             android:textSize="20dp"
             tools:layout_conversion_absoluteHeight="165dp"
             tools:layout_conversion_absoluteWidth="0dp"
             tools:layout_editor_absoluteX="22dp"
-            tools:layout_editor_absoluteY="0dp"
-            android:text="@string/figura"/>
+            tools:layout_editor_absoluteY="0dp" />
+
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/datosEsfera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+        <EditText
+            android:id="@+id/editRadioEsfera"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="@string/radio"
+            android:inputType="numberDecimal"
+            android:textColorHint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/VolEsfera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/volumen"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/editRadioEsfera"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/AreaEsfera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/area"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/editRadioEsfera"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/calcularEsfera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/calcular"
+            android:textColor="#F5E8C7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editRadioEsfera" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

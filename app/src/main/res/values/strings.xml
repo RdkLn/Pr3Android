@@ -7,4 +7,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lado">Lado</string>
+    <string name="volumen">Volumen=</string>
+    <string name="area">Area=</string>
+    <string name="radio">Radio</string>
+    <string name="Ancho">Ancho</string>
+    <string name="Largo">Largo</string>
+    <string name="Profundidad">Profundidad</string>
+    <string name="calcular">Calcular</string>
 </resources>
