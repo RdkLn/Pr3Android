@@ -4,9 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/DAM/Android/Practica3/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/DAM/Android/Practica3/app/src/main/res/layout/cubo.xml" value="0.21467391304347827" />
-        <entry key="..\:/DAM/Android/Practica3/app/src/main/res/layout/esfera.xml" value="0.1716485507246377" />
+        <entry key="..\:/DAM/Android/Practica3/app/src/main/res/layout/cubo.xml" value="0.33" />
+        <entry key="..\:/DAM/Android/Practica3/app/src/main/res/layout/esfera.xml" value="0.21" />
         <entry key="..\:/DAM/Android/Practica3/app/src/main/res/layout/fragment_calculos.xml" value="0.21467391304347827" />
+        <entry key="..\:/DAM/Android/Practica3/app/src/main/res/layout/fragment_paginaweb.xml" value="0.24456521739130435" />
         <entry key="..\:/DAM/Android/Practica3/app/src/main/res/layout/paralepipedo.xml" value="0.1" />
       </map>
     </option>
