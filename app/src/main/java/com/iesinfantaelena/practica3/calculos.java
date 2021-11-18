@@ -3,6 +3,7 @@ package com.iesinfantaelena.practica3;
 import android.app.Activity;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
@@ -98,6 +99,7 @@ public class calculos extends Fragment implements View.OnClickListener {
         cambiarURL();
         return v;
     }
+    //Aqui definiremos todos los objetos que utilizaremos a lo largo te todo nuestro código
     public void definirObjetos(View v){
         botonCubo= v.findViewById(R.id.botonCubo);
         botonEsfera=v.findViewById(R.id.botonEsfera);
@@ -123,6 +125,7 @@ public class calculos extends Fragment implements View.OnClickListener {
         areaParalepipedo=v.findViewById(R.id.AreaParalepipedo);
         volumenParalepipedo=v.findViewById(R.id.VolParalepipedo);
     }
+    //Este metodo se encarga de mostrar y ocultar las secciones de los calculos de las figuras geométricas
     public void mostarSeccion(){
         botonCubo.setOnClickListener(this);
         botonEsfera.setOnClickListener(this);
@@ -135,7 +138,7 @@ public class calculos extends Fragment implements View.OnClickListener {
         calcularEsfera.setOnClickListener(this);
         calcularParalepipedo.setOnClickListener(this);
     }
-
+    //Esta funcion se encarga de cambiar la pagina que se muestra en el Webview del segundo fragment
     public void cambiarURL(){
         figuraCubo.setOnClickListener(this);
         figuraEsfera.setOnClickListener(this);
@@ -145,19 +148,22 @@ public class calculos extends Fragment implements View.OnClickListener {
     public void calcularCubo(){
         double area,volumen,valor1;
         try {
+            //Utilizamos la libreria Math para poder realizar las operaciones matemáticas que necesitamos
             valor1=Double.parseDouble(lado.getText().toString());
             area=(6*(Math.pow(valor1,2)));
             volumen=Math.pow(valor1,3);
             areaCubo.setText("A="+ area);
             volumenCubo.setText("V=" + volumen);
+            Toast.makeText(getContext(),"Operación realizada con éxito",Toast.LENGTH_LONG).show();
         }catch (Exception e){
-            Toast.makeText(getContext(),"Error: Es necesario introducir un numero",Toast.LENGTH_LONG).show();
+            alerta();
         }
     }
 
     public void calcularEsfera(){
         double area,volumen,valor1;
         try {
+            //Utilizamos la libreria Math para poder realizar las operaciones matemáticas que necesitamos
             valor1=Double.parseDouble(radio.getText().toString());
             area=(4*Math.PI*(Math.pow(valor1,2)));
             volumen=((4*Math.PI*(Math.pow(valor1,3)))/3);
@@ -165,8 +171,9 @@ public class calculos extends Fragment implements View.OnClickListener {
             volumen=Math.round(volumen);
             areaEsfera.setText("A="+ area);
             volumenEsfera.setText("V=" + volumen);
+            Toast.makeText(getContext(),"Operación realizada con éxito",Toast.LENGTH_LONG).show();
         }catch (Exception e){
-            Toast.makeText(getContext(),"Error: Es necesario introducir un numero",Toast.LENGTH_LONG).show();
+            alerta();
         }
     }
 
@@ -180,17 +187,30 @@ public class calculos extends Fragment implements View.OnClickListener {
             volumen=(valor1*valor2*valor3);
             areaParalepipedo.setText("A="+area);
             volumenParalepipedo.setText("V="+volumen);
+            Toast.makeText(getContext(),"Operación realizada con éxito",Toast.LENGTH_LONG).show();
         }catch (Exception e){
-            Toast.makeText(getContext(),"Error: Es necesario rellenar todos los campos",Toast.LENGTH_LONG).show();
+            alerta();
+
         }
     }
+    //Esta funcion muestra un AlertDialog y se ejecutara cada vez que haya una excepción en los calculos
+    private void alerta() {
+        AlertDialog.Builder builder=new AlertDialog.Builder(this.getContext());
+        builder.setMessage(R.string.frase);
+        AlertDialog alertDialog=builder.create();
+        alertDialog.show();
+    }
 
+    //Este método sobreescribirá el metodo OnCLick, que utilizaremos para todos los botones
+    //Manejaremos todos nuestros botones con un switch()
     @Override
     public void onClick(View view) {
         String url;
         switch (view.getId()){
             case R.id.botonCubo:
+                //Los metodos de .isShown devolveran si el objeto es visible en nuestro view
                 if (!datosCubo.isShown()){
+                    //Con .setVisibility() podremos cambiar si el objeto es invisible o no
                     datosCubo.setVisibility(View.VISIBLE);
                 }
                 else{
@@ -244,4 +264,5 @@ public class calculos extends Fragment implements View.OnClickListener {
         WebView pagina = ac.findViewById(R.id.pagina);
         pagina.loadUrl(url);
     }
+
 }

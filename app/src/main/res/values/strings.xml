@@ -14,4 +14,5 @@
     <string name="Largo">Largo</string>
     <string name="Profundidad">Profundidad</string>
     <string name="calcular">Calcular</string>
+    <string name="frase">Es necesario introducir un numero</string>
 </resources>
